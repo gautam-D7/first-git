@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="msa.css">
+
+    </head>
+
+    <body>  
+                <h1> Please Review Us</h1>
+  
+<form onsubmit="AddRow()">
+    <table>
+        <tr>
+            <td>
+                <label>Day Visited</label>
+            </td>
+            <td>
+                <input type="date" id="Dvisited" name="Dayvisited">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Dine in/Take out</label>
+            </td>
+            <td>
+                <input type="radio" value="Dinein" name="servicetype"> Dine in 
+                <input type="radio" value="Takeout" name="servicetype"> Take out
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Food Quality</label>
+            </td>
+            <td>
+                <input type="radio" value="Excellent" name="foodquality"> Excellent
+                <input type="radio" value="Good"foodquality"> Good
+                <input type="radio" value="Average" name="foodquality"> Average
+                <input type="radio" value="Dissatisfied" name="foodquality"> Dissatisfied
+
+            </td>
+        </tr>
+<tr>
+    <td>
+        <label>Name</label>
+</td>
+<td>
+    <input type="text" id="name" name="name">
+</td>
+</tr>
+<tr>
+    <td>
+        <label>Age</label>
+    </td>
+    <td> 
+        <select id="age">
+            <option value=""><!----></option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option selected="selected">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+        </select><br><br>
+</td>
+</tr>
+<tr>
+    <td>
+        <label for="email"> Email</label>
+    </td>
+    <td>
+        <input type="text" id="email" placeholder="example@example.com">
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="button" id="button" value="Submit" > 
+    </td>
+</tr>
+    </table>
+    <table class="show">
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Service Type</th>
+            <th>Food Quality</th>
+    </table>
+    <script>
+        var list1=[];
+        var list2=[];
+        var list3=[];
+        var list4=[];
+        var n=1;
+        var x=0;
+
+        function AddRow(){
+var AddRown=document.getElementById('show')
+
+var NewRow= Addrown.insertRow(n);
+
+list1[x]=document.querySelector('input[name="Dayvisited"]').value;
+
+list2[x]=document.getElementById("name")
+
+list3[x]=document.querySelector('input[name="servicetype"]:checked').value;
+
+list4[x]=document.querySelector('input[name="foodquality"]:checked').value;
+
+var cel1 = NewRow.insertCell(0);
+var cel2 = NewRow.insertCell(1);
+var cel3 = NewRow.insertCell(2);
+var cel4 = NewRow.insertCell(3);
+
+cel1.innerHTML = list1[x];
+cel2.innerHTML = list2[x];
+cel3.innerHTML = list3[x];
+cel4.innerHTML = list4[x];
+
+n++;
+x++;
+
+}
+
+    </script>
+</form>
+    </body>
+</html>
